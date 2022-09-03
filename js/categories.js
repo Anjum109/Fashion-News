@@ -4,8 +4,9 @@ const loadCategories = () => {
         .then(data => displayCategories(data.data.news_category))
 }
 const displayCategories = categories => {
+
     const categoriesContainer = document.getElementById('categories-container');
-    // categoriesContainer.innerText='';
+    // categoriesContainer.innerText = '';
 
 
     const categoryList = document.createElement('li');
@@ -35,6 +36,11 @@ const loadNewsDetails = id => {
 }
 
 const displayLoadNews = news => {
+    // sort by view 
+    news.sort(function (a, b) {
+        return b.total_view - a.total_view
+    });
+
     const displayAllNews = document.getElementById('display-all-news');
     const displayAllNews2 = document.getElementById('display-all-news-2');
     if (news.length == 0) {
@@ -55,23 +61,26 @@ const displayLoadNews = news => {
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('col');
         newsDiv.innerHTML = `
-        <div class="card" style="width:22rem;">
-            <img src="${myNews.thumbnail_url}" class="card-img-top w-100" alt="...">
-            <div class="card-body">
-              
-                <p class="card-text">${myNews.title}</p>
-                <p class="card-text">${myNews.details.slice(0, 140) + "..."}</p>
-                <div class="d-flex align-items-center">
-                <img src="${myNews.author.img}" class="rounded-circle w-25 d-inline" alt="...">
-                <h2 class="card-title ms-3 fs-4 fw-bold">${myNews.author.name ? myNews.author.name : 'No author name available'}</h2>
-                </div>
-                <p class="mt-3 fw-bold">Published Date : ${myNews.author.published_date ? myNews.author.published_date : 'No published date available'}</p>
-                <p><i class="fa-solid fa-eye"> ${myNews.total_view ? myNews.total_view : ' No total view found'}</i></p>
-                <button type="button" onclick="loadModalNewsDetails('${myNews._id}')" class="btn btn-primary fs-5" data-bs-toggle="modal" data-bs-target="#newsDetailModal">
-                Show Details
-              </button>
-            </div>
-        </div>
+       <div class="container">
+       <div class="card rounded-4" style="width:22rem;">
+       <div class="w-100">
+       <img src="${myNews.thumbnail_url}" class="card-img-top img-fluid" alt="..."></div>
+       <div class="card-body">
+         
+           <p class="card-text">${myNews.title}</p>
+           <p class="card-text">${myNews.details.slice(0, 140) + "..."}</p>
+           <div class="d-flex align-items-center">
+           <img src="${myNews.author.img}" class="rounded-circle w-25 d-inline" alt="...">
+           <h2 class="card-title ms-3 fs-4 fw-bold">${myNews.author.name ? myNews.author.name : 'No author name available'}</h2>
+           </div>
+           <p class="mt-3 fw-bold">Published Date : ${myNews.author.published_date ? myNews.author.published_date : 'No published date available'}</p>
+           <p><i class="fa-solid fa-eye"> ${myNews.total_view ? myNews.total_view : ' No total view found'}</i></p>
+           <button type="button" onclick="loadModalNewsDetails('${myNews._id}')" class="btn btn-primary fs-5" data-bs-toggle="modal" data-bs-target="#newsDetailModal">
+           Show Details
+         </button>
+       </div>
+   </div>
+       </div>
         `;
         newsCategoryContainer.appendChild(newsDiv)
     }
