@@ -33,13 +33,13 @@
         <section class="mt-4 text-center mx-1">
 
 
-            <div id="categories-container" class="row col-md-12 text-secondary">
+            <ul id="categories-container" class="row col-md-12 text-secondary list-unstyled">
 
-            </div>
+            </ul>
         </section>
         <section>
-            <div class="border border-white bg-white mt-5 px-4 py-2">
-                <h5>4 items found for category Entertainment</h5>
+            <div id="itemsfound-container" class="border border-white bg-white mt-5 px-4 py-2">
+
             </div>
         </section>
         <section class="mt-5">
@@ -61,7 +61,56 @@
                 </div>
             </div>
         </section>
+
+        <section class="container mb-3">
+            <div id="news-category-container" class="row row-cols-1 row-cols-md-3 g-4">
+
+            </div>
+            <div id="no-news-message" class="mt-4 d-none">
+                <h3 class="text-warning">No news found.</h3>
+            </div>
+        </section>
+        <section>
+            <!-- Button trigger modal -->
+
+
+            <!-- Modal -->
+            <div class="modal fade p-3" id="newsDetailModal" tabindex="-1" aria-labelledby="newsDetailModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <img src="" id="news-detail-modal-thumbnail" class="w-25 p-3" alt="...">
+                        <div class="modal-header">
+
+                            <h5 class="modal-title" id="newsDetailModalLabel"></h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div id="news-details" class="modal-body">
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- loader -->
+        <section id="loader" class="d-none">
+            <div style="height:400px" class="d-flex justify-content-center align-items-center border">
+                <div class="spinner-border text-success" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </section>
     </main>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+        crossorigin="anonymous"></script>
+
 
     <script src="js/categories.js"></script>
 </body>
