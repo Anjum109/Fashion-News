@@ -27,6 +27,7 @@ const displayCategories = categories => {
 }
 
 const loadNewsDetails = id => {
+    loadSpinner(true);
     const url = `https://openapi.programming-hero.com/api/news/category/${id}`;
     fetch(url)
         .then(res => res.json())
@@ -72,6 +73,7 @@ const displayLoadNews = news => {
         `;
         newsCategoryContainer.appendChild(newsDiv)
     }
+    loadSpinner(false)
 }
 loadCategories()
 // spinner 
@@ -83,6 +85,7 @@ const loadSpinner = isloading => {
         loader.classList.add('d-none')
     }
 }
+
 // items found
 // const getItemsCount = (items) => {
 //     const itemContainer = document.getElementById('itemsfound-container');
