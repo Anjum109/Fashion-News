@@ -6,3 +6,7 @@ button a {
 #blog {
     font: bold;
 }
+
+.title {
+    font-family: 'Playfair Display';
+}
