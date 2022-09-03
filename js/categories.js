@@ -38,7 +38,7 @@ const displayLoadNews = news => {
     const displayAllNews = document.getElementById('display-all-news');
     const displayAllNews2 = document.getElementById('display-all-news-2');
     if (news.length == 0) {
-        displayAllNews.innerText = "No cetagory is selected";
+        displayAllNews.innerText = "No News Found";
     }
     else {
         displayAllNews.innerText = news.length;
