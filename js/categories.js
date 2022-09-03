@@ -5,7 +5,7 @@ const loadCategories = () => {
 }
 const displayCategories = categories => {
 
-    const categoriesContainer = document.getElementById('categories-container');
+    const categoriesContainer = document.getElementById('categories-set');
     // categoriesContainer.innerText = '';
 
 
