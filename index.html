@@ -15,8 +15,8 @@
         <nav class="navbar">
             <div class="container">
                 <a class="navbar-brand"><span
-                        class="border border-primary bg-primary text-white px-3 py-2 rounded-4">News
-                    </span> <span class="text-primary mx-2">Portal</span></a>
+                        class="border border-primary bg-primary text-white px-3 py-2 rounded-4">Various
+                    </span> <span class="text-primary mx-2">News</span></a>
                 <form class="d-flex" role="search">
                     <button class="btn border border-0 text-primary" type="submit"><a class="text-primary"
                             href="index.html">News</a></button>
@@ -38,8 +38,8 @@
             </ul>
         </section>
         <section>
-            <div id="itemsfound-container" class="border border-white bg-white mt-5 px-4 py-2">
-
+            <div id="total-found" class="border border-white bg-white mt-5 px-4 py-2">
+                <h5><span id="display-all-news">0</span> Items for this category</h5>
             </div>
         </section>
         <section class="mt-5">
@@ -62,13 +62,17 @@
             </div>
         </section>
 
-        <section class="container mb-3">
+        <section class="container mb-3 mt-5">
+            <div id="spinner-display" class="spinner-border" role="status">
+                <span class="sr-only"></span>
+            </div>
             <div id="news-category-container" class="row row-cols-1 row-cols-md-3 g-4">
 
             </div>
             <div id="no-news-message" class="mt-4 d-none">
                 <h3 class="text-warning">No news found.</h3>
             </div>
+
         </section>
         <section>
             <!-- Button trigger modal -->

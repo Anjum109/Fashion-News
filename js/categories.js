@@ -34,26 +34,12 @@ const loadNewsDetails = id => {
 }
 
 const displayLoadNews = news => {
-
+    const displayAllNews = document.getElementById('display-all-news');
+    displayAllNews.innerText = news.length;
     const newsCategoryContainer = document.getElementById('news-category-container');
 
     newsCategoryContainer.innerText = '';
-    // const noNews = document.getElementById('no-news-message');
-    // if(news.length === 0){
-    //     noNews.classList.add('d-none');
-    // }
-    // else{
-    //     noNews.classList.add('d-none');
-    // }
-    // const value = 0;
-    // console.log('ajaira print');
-    // console.log(news.length);
-    // if (news.length == 0) {
-    //     value = none;
-    // }
-    // else {
-    //     value = news.length;
-    // }
+
 
     for (const myNews of news) {
         console.log(myNews)
@@ -79,6 +65,19 @@ const displayLoadNews = news => {
         newsCategoryContainer.appendChild(newsDiv)
     }
 }
+// items found
+// const getItemsCount = (items) => {
+//     const itemContainer = document.getElementById('itemsfound-container');
+//     itemContainer.innerHTML = '';
+//     const itemDiv = document.createElement('div');
+//     itemDiv.innerHTML = `
+//     <div class="fs-6 item-found px-3">
+//     <h3 class="fw-light p-2">${items}Items found for this category</h3>
+//     </div>
+//     `;
+//     itemContainer.appendChild(itemDiv);
+// }
+
 const loadModalNewsDetails = id => {
 
     const url = `https://openapi.programming-hero.com/api/news/${id}`;
