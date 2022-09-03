@@ -35,7 +35,15 @@ const loadNewsDetails = id => {
 
 const displayLoadNews = news => {
     const displayAllNews = document.getElementById('display-all-news');
-    displayAllNews.innerText = news.length;
+    const displayAllNews2 = document.getElementById('display-all-news-2');
+    if (news.length == 0) {
+        displayAllNews.innerText = "No cetagory is selected";
+    }
+    else {
+        displayAllNews.innerText = news.length;
+        displayAllNews2.innerText = "Items for this category ";
+    }
+
     const newsCategoryContainer = document.getElementById('news-category-container');
 
     newsCategoryContainer.innerText = '';
@@ -63,6 +71,16 @@ const displayLoadNews = news => {
         </div>
         `;
         newsCategoryContainer.appendChild(newsDiv)
+    }
+}
+loadCategories()
+// spinner 
+const loadSpinner = isloading => {
+    const loader = document.getElementById('loader');
+    if (isloading) {
+        loader.classList.remove('d-none')
+    } else {
+        loader.classList.add('d-none')
     }
 }
 // items found
@@ -109,4 +127,5 @@ const displayLoadModalNewsDetails = details => {
 
 loadNewsDetails()
 
-loadCategories()
+
+

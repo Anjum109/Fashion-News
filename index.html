@@ -39,7 +39,8 @@
         </section>
         <section>
             <div id="total-found" class="border border-white bg-white mt-5 px-4 py-2">
-                <h5><span id="display-all-news">0</span> Items for this category</h5>
+                <h5><span id="display-all-news"></span> <span id="display-all-news-2"></span>
+                </h5>
             </div>
         </section>
         <section class="mt-5">
@@ -63,9 +64,7 @@
         </section>
 
         <section class="container mb-3 mt-5">
-            <div id="spinner-display" class="spinner-border" role="status">
-                <span class="sr-only"></span>
-            </div>
+
             <div id="news-category-container" class="row row-cols-1 row-cols-md-3 g-4">
 
             </div>
@@ -74,6 +73,16 @@
             </div>
 
         </section>
+        <!-- spinner start  -->
+        <section id="loader" class="d-none">
+            <div class="d-flex justify-content-center">
+                <div class="spinner-border text-danger" role="status">
+                    <span class="visually-hidden">loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- spinner end  -->
         <section>
             <!-- Button trigger modal -->
 
