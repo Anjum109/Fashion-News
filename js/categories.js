@@ -56,17 +56,17 @@ const displayLoadNews = news => {
         newsDiv.classList.add('col');
         newsDiv.innerHTML = `
         <div class="card" style="width:22rem;">
-            <img src="${myNews.thumbnail_url}" class="card-img-top" alt="...">
+            <img src="${myNews.thumbnail_url}" class="card-img-top w-100" alt="...">
             <div class="card-body">
               
                 <p class="card-text">${myNews.title}</p>
                 <p class="card-text">${myNews.details.slice(0, 140) + "..."}</p>
-                <div class="d-flex">
+                <div class="d-flex align-items-center">
                 <img src="${myNews.author.img}" class="rounded-circle w-25 d-inline" alt="...">
-                <h2 class="card-title">${myNews.author.name ? myNews.author.name : 'No author name available'}</h2>
+                <h2 class="card-title ms-3 fs-4 fw-bold">${myNews.author.name ? myNews.author.name : 'No author name available'}</h2>
                 </div>
-                <p>Published Date : ${myNews.author.published_date ? myNews.author.published_date : 'No published date available'}</p>
-                <p><i class="fa-solid fa-eye">${myNews.total_view ? myNews.total_view : 'No total view found'}</i></p>
+                <p class="mt-3 fw-bold">Published Date : ${myNews.author.published_date ? myNews.author.published_date : 'No published date available'}</p>
+                <p><i class="fa-solid fa-eye"> ${myNews.total_view ? myNews.total_view : ' No total view found'}</i></p>
                 <button type="button" onclick="loadModalNewsDetails('${myNews._id}')" class="btn btn-primary fs-5" data-bs-toggle="modal" data-bs-target="#newsDetailModal">
                 Show Details
               </button>
